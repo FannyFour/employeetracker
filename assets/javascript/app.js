@@ -25,8 +25,13 @@ $("#buttonID").on("click", function () {
 		dateAdded: firebase.database.ServerValue.TIMESTAMP
 		});
 		
+// last child
+	dataBase.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function (childSnapshot) {
 
-	firebase.database().ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function (childSnapshot) {
 
-		
 	})
+// All Children
+	dataBase.ref().on("child_added", function(childSnapshot){
+
+	})
+
